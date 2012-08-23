@@ -1,0 +1,43 @@
+/* CSS declarations go here */
+*{margin:0px;padding:0px;}
+
+body{background:#0088CC;}
+
+#geral{width:100%;height:100%;}
+
+.state{
+	color:#FFF;
+	text-align:center;
+	width:31%;
+	border-right:2px dashed #FFF;
+	float:left;
+	padding:1%;
+	height:400px;
+}
+
+.state#dones{border:none;}
+
+.clear{
+	clear:both;
+}
+
+.board{
+	width:100%;
+	padding:10px;
+	background:#FFF;
+	color:#0088CC;
+}
+
+.drag{background:#FFF;width:45px;padding:5px;cursor:move;}
+
+.card{
+	color:#000;
+	width:45px;
+	height:50px;
+	display:block;
+	background:yellow;
+	margin:5px;
+	padding:10px;
+	float:left;
+	cursor:move;
+}

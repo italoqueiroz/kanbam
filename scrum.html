@@ -1,0 +1,58 @@
+<head>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <title>Scrum</title>
+</head>
+
+<body>
+	<div id='geral'>
+		{{> board}}
+	  {{> todo}}
+	  {{> doing}}
+	  {{> done}}
+	<div class='clear'></div>
+	</div>
+</body>
+
+<template name="board">
+	{{#each drags}}
+		<div class='drag' id='{{_id}}' style='position:relative;left:{{left}}px;top:{{top}}px'>{{name}}</div>	
+	{{/each}}
+  <div class='board'>
+		Tarefa: <input type='text' name='task' id='nameTask'>
+		        <input type='button' id='addTask' value='add'>
+  </div>
+</template>
+
+<template name="todo">
+ <div id='todos' class='state'>
+  	<h1>Pra Fazer!</h1>
+		{{#each taskList}}
+			{{> task}}
+		{{/each}}
+  </div>
+</template>
+
+<template name="doing">
+ <div id='doings' class='state'>
+  	<h1>Fazendo!</h1>
+		{{#each taskList}}
+       {{> task}}
+		{{/each}}
+  </div>
+</template>
+
+<template name="done">
+ <div id='dones' class='state'>
+  	<h1>Finalizada!</h1>
+		{{#each taskList}}
+       {{> task}}
+		{{/each}}
+  </div>
+</template>
+
+<template name='task'>
+	<div id='{{_id}}' data-state='{{state}}' class='card'>
+		<p>{{task}}</p>
+	</div>
+</template>

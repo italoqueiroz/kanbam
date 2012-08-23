@@ -1,0 +1,1 @@
+Este projeto tem fins de estudo sobre a tecnologia > meteor.com
