@@ -1,25 +1,15 @@
-/* CSS declarations go here */
-*{margin:0px;padding:0px;}
-
-body{background:#0088CC;}
-
-#geral{width:100%;height:100%;}
-
 .state{
-	color:#FFF;
+	color:#999;
 	text-align:center;
 	width:31%;
-	border-right:2px dashed #FFF;
-	float:left;
+	border-right:2px dashed #0055CC;
 	padding:1%;
 	height:400px;
 }
 
-.state#dones{border:none;}
+.state ul{width:100%; min-height:300px;}
 
-.clear{
-	clear:both;
-}
+.state#dones{border:none;}
 
 .board{
 	width:100%;
@@ -28,16 +18,29 @@ body{background:#0088CC;}
 	color:#0088CC;
 }
 
-.drag{background:#FFF;width:45px;padding:5px;cursor:move;}
-
 .card{
 	color:#000;
-	width:45px;
+	width:80px;
 	height:50px;
 	display:block;
 	background:yellow;
 	margin:5px;
 	padding:10px;
-	float:left;
 	cursor:move;
+}
+
+.card span{
+	font-size: 0.6em; 
+	position: absolute; 
+	bottom: 4px; 
+	right: 4px;
+}
+
+.state-hover{
+	background:#FFF; 
+	color:#999;
+}
+
+.state-active{
+	color:#000;
 }
