@@ -38,7 +38,6 @@ if (Meteor.is_client) {
   Meteor.startup(function(){
     $('#nameUser').focus();
     var boxes = ["#todos", "#doings", "#dones"];
-		console.log($('body').width());
     $(boxes.join(',')).droppable({
       activeClass: "state-hover",
       hoverClass: "state-active",

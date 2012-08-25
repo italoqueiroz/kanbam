@@ -1,1 +1,4 @@
-Este projeto tem fins de estudo sobre a tecnologia > meteor.com
+Este é um kanbam utilizado na metodologia ágio SCRUM, construído utilizando meteor.com
+
+Até o momento possuí 3 fases: Pra Fazer, Fazendo e Finalizado
+
