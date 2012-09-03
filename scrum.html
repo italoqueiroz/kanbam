@@ -1,89 +1,95 @@
 <head>
-	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
   <title>Kanbam</title>
 </head>
 
 <body>
-	{{> board}}
-	<div class='container-fluid'>
-	  {{> kanbam}}
-	</div>
+  {{> board}}
+  <div class='container-fluid'>
+    {{> kanbam}}
+  </div>
 </body>
 
+<!-- Template responsável por montar as fases do kambam-->
 <template name="kanbam">
-	<div class=''>	
-	{{> todo}}
-  {{> doing}}
-  {{> done}}
-	</div>
+  <div> 
+    {{> todo}}
+    {{> doing}}
+    {{> done}}
+  </div>
 </template>
 
-<template name="board">	
-	<div class="navbar navbar-inverse navbar-fixed-bottom">
-	  <div class="navbar-inner">
-	    <div class="container">
-	      <a class="brand" href="#">Kanbam</a>
+<!-- Template responsável por criar a barra inferior com os input's para adicionar tarefa -->
+<template name="board"> 
+  <div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="#">Kanbam</a>
 
-	      <div class="nav-collapse">
-	        <!-- .nav, .navbar-search, .navbar-form, etc -->
-					<div class='nav pull-right'>
-						<form class='form-inline'>
-							<div class="input-prepend">
-								<span class="add-on">@</span><input type='text' name='user' class="span2" id='nameUser' placeholder='Nome do usuário'>
-							</div>
-							<div class="input-append">
-								<input type='text' name='task' class="span2" id='nameTask' placeholder='Nome da tarefa'><button id='addTask' class='btn btn-primary'>Add!</button>
-							</div>
-						</form>
-					</div>
-	      </div>
+        <div class="nav-collapse">
+          <!-- .nav, .navbar-search, .navbar-form, etc -->
+          <div class='nav pull-right'>
+            <form class='form-inline'>
+              <div class="input-prepend">
+                <span class="add-on">@</span><input type='text' name='user' class="span2" id='nameUser' placeholder='Nome do usuário'>
+              </div>
+              <div class="input-append">
+                <input type='text' name='task' class="span2" id='nameTask' placeholder='Nome da tarefa'><button id='addTask' class='btn btn-primary'>Add!</button>
+              </div>
+            </form>
+          </div>
+        </div>
 
-	    </div>
-	  </div>
-	</div>
+      </div>
+    </div>
+  </div>
 </template>
 
+<!-- Quadro com as tarefas que estão em "todo" -->
 <template name="todo">
- <div id='todos' class='state pull-left'>
-  	<h1>Pra Fazer!</h1>
-			{{#each taskList}}
-		     {{> task}}	
-			{{/each}}
+  <div id='todos' class='state pull-left'>
+    <h1>Pra Fazer!</h1>
+    {{#each taskList}}
+      {{> task}}  
+    {{/each}}
   </div>
 </template>
 
+<!-- Quadro com as tarefas que estão em "doing" -->
 <template name="doing">
- <div id='doings' class='state pull-left'>
-  	<h1>Fazendo!</h1>
-			{{#each taskList}}
-		     {{> task}}	
-			{{/each}}
+  <div id='doings' class='state pull-left'>
+    <h1>Fazendo!</h1>
+    {{#each taskList}}
+      {{> task}}  
+    {{/each}}
   </div>
 </template>
 
+<!-- Quadro com as tarefas que estão em "done" -->
 <template name="done">
- <div id='dones' class='state pull-left'>
-  	<h1>Finalizada!</h1>
-			{{#each taskList}}
-		     {{> task}}	
-			{{/each}}
+  <div id='dones' class='state pull-left'>
+    <h1>Finalizada!</h1>
+    {{#each taskList}}
+      {{> task}}  
+    {{/each}}
   </div>
 </template>
 
+<!-- Template com o padrão de renderização das tarefas -->
 <template name="listTask">
-	<ul>
-		{{#each taskList}}
-	     {{> task}}	
-		{{/each}}
-	</ul>
+  <ul>
+    {{#each taskList}}
+      {{> task}}  
+    {{/each}}
+  </ul>
 </template>
 
 <template name='task'>
-	<div id='{{_id}}' data-state='{{state}}' class='card pull-left' data-blocked='{{blocked}}' style='left:{{left}}px;top:{{top}}px;position:relative;'>
-		<p>{{task}}</p>
-		{{#if user}}
-			<span>By: {{user}}</span>
-		{{/if}}
-	</div>
-	{{applyDragElements}}
+  <div id='{{_id}}' data-state='{{state}}' class='card pull-left' data-blocked='{{blocked}}' style='left:{{left}}px;top:{{top}}px;position:relative;'>
+    <p>{{task}}</p>
+    {{#if user}}
+      <span>By: {{user}}</span>
+    {{/if}}
+  </div>
+  {{applyDragElements}}
 </template>

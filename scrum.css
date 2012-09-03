@@ -1,46 +1,53 @@
-.state{
-	color:#999;
-	text-align:center;
-	width:31%;
-	border-right:2px dashed #0055CC;
-	padding:1%;
-	height:400px;
-}
+/*
+* Kambam
+* Author: ítalo.queiroz@gmail.com
+*/
 
-.state ul{width:100%; min-height:300px;}
-
-.state#dones{border:none;}
-
-.board{
-	width:100%;
-	padding:10px;
-	background:#FFF;
-	color:#0088CC;
-}
-
+/* Post-it das tarefas.
+-------------------------------------------------------------- */
 .card{
-	color:#000;
-	width:80px;
-	height:50px;
-	display:block;
-	background:yellow;
-	margin:5px;
-	padding:10px;
-	cursor:move;
+  color:#000;
+  width:80px;
+  height:50px;
+  display:block;
+  background:yellow;
+  margin:5px;
+  padding:10px;
+  cursor:move;
 }
 
 .card span{
-	font-size: 0.6em; 
-	position: absolute; 
-	bottom: 4px; 
-	right: 4px;
+  font-size: 0.6em; 
+  position: absolute; 
+  bottom: 4px; 
+  right: 4px;
+}
+
+/* Estados do kambam "#todos, #doings, #dones".
+-------------------------------------------------------------- */
+.state{
+  color:#999;
+  text-align:center;
+  width:31%;
+  border-right:2px dashed #0055CC;
+  padding:1%;
+  height:400px;
+}
+
+.state ul{
+  width:100%; 
+  min-height:300px;
+}
+
+.state#dones{
+  border:none;
 }
 
 .state-hover{
-	background:#FFF; 
-	color:#999;
+  background:#FFF; 
+  color:#999;
 }
 
 .state-active{
-	color:#000;
+  color:#000;
 }
